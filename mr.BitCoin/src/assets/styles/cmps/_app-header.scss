@@ -1,0 +1,16 @@
+.app-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 10px;
+    background-color: $header-footer-bg;
+    color: white;
+
+    a{
+        margin-inline-start: 1em;
+        color: white;
+    }
+    a.router-link-active{
+        color: lightgreen;
+    }
+}
