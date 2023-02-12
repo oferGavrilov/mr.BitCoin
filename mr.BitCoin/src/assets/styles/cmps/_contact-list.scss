@@ -1,0 +1,14 @@
+.contact-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(320px , 1fr));
+    gap: 20px;
+    padding: 15px;
+    font-family: 'Fuzzy Bubbles', cursive;
+
+    .remove-btn {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        cursor: pointer;
+    }
+}

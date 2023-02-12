@@ -11,10 +11,12 @@ export default {
 </script>
 
 <template>
+  <div>
     <AppHeader />
     <main class="main-container">
       <RouterView />
     </main>
     <AppFooter />
+  </div>
 </template>
 

@@ -1,6 +1,62 @@
 .home {
-    & >*{
-        gap: 10px;
-        align-items: center;
+    h3{
+        font-size: 30px;
+        font-family: 'Fuzzy Bubbles', cursive;
+        margin: 0;
     }
+
+    &>* {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin-bottom: 50px;
+
+        >* {
+            padding-top: 25px;
+
+            h2 {
+
+                font-family: 'Fuzzy Bubbles', cursive;
+                font-size: 47px;
+            }
+
+        }
+        img {
+            padding-top: 35px;
+            width: 100%;
+        }
+        @include for-normal-layout() {
+            &{
+                flex-direction: row;
+                img{
+                    width: 50%;
+                }
+
+            }
+        }
+    }
+
+    .balance {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        font-size: 17px;
+        font-family: 'Fuzzy Bubbles', cursive;
+        margin: auto;
+        svg,
+        span {
+            font-size: 14px;
+            color: lightgreen;
+        }
+        svg{
+            height: 12px;
+        }
+    }
+    
+    .rate{
+        h4{
+            margin-right: 8px;
+        }
+    }
+
 }

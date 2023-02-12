@@ -1,10 +1,14 @@
 .app-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-inline: 10px;
     background-color: $header-footer-bg;
     color: white;
+    height: 8vh;
+    
+    .header-content{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-inline: 15px;
+    }
 
     a{
         margin-inline-start: 1em;
@@ -12,5 +16,15 @@
     }
     a.router-link-active{
         color: lightgreen;
+    }
+
+    .logo{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        img{
+            width: 40px;
+            height: 40px;
+        }
     }
 }

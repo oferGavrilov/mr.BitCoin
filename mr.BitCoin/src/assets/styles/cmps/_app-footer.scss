@@ -1,9 +1,8 @@
 footer {
     @include center-flex();
     background-color: $header-footer-bg;
-    position: fixed;
-    bottom: 0;
     width: 100%;
     color: white;
     padding: 10px;
+    height: 5vh;
 }
