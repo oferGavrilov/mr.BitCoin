@@ -2,7 +2,7 @@
 <div class="contact-filter">
     <input 
         type="text"
-        v-modal="filter.term"
+        :value="filter.term"
         placeholder="search"
         @input="onFilter"
 
