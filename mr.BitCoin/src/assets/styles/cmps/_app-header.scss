@@ -1,28 +1,29 @@
-.app-header{
+.app-header {
     background-color: $header-footer-bg;
     color: white;
     height: 8vh;
-    
-    .header-content{
+
+    .header-content {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-inline: 15px;
     }
 
-    a{
+    a {
         margin-inline-start: 1em;
         color: white;
     }
-    a.router-link-active{
+
+    a.router-link-active {
         color: lightgreen;
     }
 
-    .logo{
+    .logo {
         display: flex;
         align-items: center;
         gap: 10px;
-        img{
+
+        img {
             width: 40px;
             height: 40px;
         }

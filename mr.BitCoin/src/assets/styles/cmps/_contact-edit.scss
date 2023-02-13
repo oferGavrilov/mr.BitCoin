@@ -1,0 +1,30 @@
+.contact-edit {
+    width: 400px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 20px;
+
+    input {
+        width: 300px;
+        height: 30px;
+        border-radius: 4px;
+        padding-left: 10px;
+    }
+
+    .btn-container {
+        display: flex;
+
+        button {
+            background-color:darkgray;
+            margin-right: 10px;
+            width: 100px;
+            height: 30px;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+    }
+}

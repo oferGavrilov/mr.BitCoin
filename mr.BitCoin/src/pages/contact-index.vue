@@ -1,38 +1,47 @@
 <template>
-  <ContactList v-if="contacts" :contacts="contacts" @remove="onRemoveContact" />
+<div>
+    <ContactFilter :filter="filter" @setFilter="setFilter" />
+    <ContactList v-if="contacts" :contacts="contacts" @remove="onRemoveContact" />
+</div>
 </template>
 
 <script>
-import { contactService } from "../services/contact.service.js";
-import ContactList from "../cmps/contact-list.vue";
+import ContactList from "../cmps/contact-list.vue"
+import ContactFilter from "../cmps/contact-filter.vue"
+
 export default {
   data() {
     return {
       contacts: null,
-      filterBy: null,
+      filter: {term: ''},
+
     }
   },
   async created() {
-    await this.$store.dispatch({type: 'loadContacts'})
+    await this.$store.dispatch('loadContacts')
     this.contacts = this.$store.getters.contacts
-    this.filter = this.$store.getters.filter
   },
   components: {
     ContactList,
+    ContactFilter
   },
   methods: {
     async onRemoveContact(contactId) {
       try {
         await this.$store.dispatch('removeContact', contactId)
-        // const idx = this.contacts.findIndex(contact => contact._id === contactId)
-        // this.contacts.splice(idx, 1)
       } catch (err) {
         console.log('err:', err)
       }
     },
+    async setFilter(filter) {
+      try {
+        this.filter = filter
+        await this.$store.dispatch('loadContacts', filter)
+        this.contacts = this.$store.getters.contacts
+      } catch (err) {
+        console.log('err:', err)
+      }
+    }
   },
-};
+}
 </script>
-
-<style>
-</style>

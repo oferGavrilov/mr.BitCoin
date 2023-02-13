@@ -142,9 +142,10 @@ function sort(arr) {
 
 function query(filterBy = null) {
     return new Promise((resolve, reject) => {
-        var contactsToReturn = contacts;
+        var contactsToReturn = contacts
         if (filterBy && filterBy.term) {
             contactsToReturn = filter(filterBy.term)
+            console.log('contactsToReturn:', contactsToReturn)
         }
         resolve(sort(contactsToReturn))
     })
@@ -205,6 +206,7 @@ function getDefaultFilter() {
 }
 
 function filter(term) {
+    console.log('term:', term)
     term = term.toLocaleLowerCase()
     return contacts.filter(contact => {
         return contact.name.toLocaleLowerCase().includes(term) ||

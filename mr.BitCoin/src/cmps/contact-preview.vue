@@ -1,8 +1,8 @@
 <template>
   <article>
-    <span>Name: {{ contact.name }}</span>
-    <span>Email: {{ contact.email }}</span>
-    <span>Phone: {{ contact.phone }}</span>
+    <span>{{ contact.name }}</span>
+    <!-- <span>Email: {{ contact.email }}</span>
+    <span>Phone: {{ contact.phone }}</span> -->
     <img :src="'https://robohash.org/' + contact.name" alt="" />
   </article>
 </template>

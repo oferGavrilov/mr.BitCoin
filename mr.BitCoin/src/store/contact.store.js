@@ -2,15 +2,11 @@ import { contactService } from "../services/contact.service.js"
 
 export const contactStore = {
     state: {
-        contacts: [],
-        filter: contactService.getDefaultFilter()
+        contacts: []
     },
     getters: {
         contacts({ contacts }) {
             return contacts
-        },
-        filter({ filter }) {
-            return filter
         }
     },
     mutations: {
@@ -24,18 +20,15 @@ export const contactStore = {
             const idx = state.contacts.findIndex(contact => contact._id === contactId)
             state.contacts.splice(idx, 1)
         },
-        updateProduct(state, { contact }) {
+        updateContact(state, { contact }) {
             const idx = state.contacts.findIndex(currContact => currContact._id === contact._id)
-            state.contacts.splice(idx, 1, product)
-        },
-        setFilter(state, { filter }) {
-            state.filter = filter
+            state.contacts.splice(idx, 1, contact)
         }
     },
     actions: {
-        async loadContacts({ commit }) {
+        async loadContacts({ commit }, filter) {
             try {
-                const contacts = await contactService.query()
+                const contacts = await contactService.query(filter)
                 commit({ type: 'setContacts', contacts })
             } catch (err) {
                 throw err
@@ -49,17 +42,14 @@ export const contactStore = {
                 throw err
             }
         },
-        async saveProduct({ commit }, { contact }) {
+        async saveContact({ commit }, contact) {
             try {
-                const actionType = (contact._id) ? 'updateProduct' : 'addProduct'
+                const actionType = (contact._id) ? 'updateContact' : 'addContact'
                 const saveContact = await contactService.save(contact)
                 commit({ type: actionType, contact: saveContact })
             } catch (err) {
                 throw err
             }
         },
-        setFilter({ commit }, { filter }) {
-            commit({ type:'setFilter', filter })
-        }
     }
 }
