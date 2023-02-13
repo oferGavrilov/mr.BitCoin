@@ -1,7 +1,7 @@
 <template>
 <div>
-    <ContactFilter :filter="filter" @setFilter="setFilter" />
-    <ContactList v-if="contacts" :contacts="contacts" @remove="onRemoveContact" />
+      <ContactFilter :filter="filter" @setFilter="setFilter" />
+      <ContactList v-if="contacts" :contacts="contacts" @remove="onRemoveContact" />
 </div>
 </template>
 

@@ -10,23 +10,24 @@ const routerOption = {
   routes: [
     {
       path: '/',
-      component: HomeView
+      component: HomeView,
     },
     {
       path: '/statistics',
-      component: Statistics
+      component: Statistics,
+
     },
     {
       path: '/contact',
-      component: Contact
+      component: Contact,
     },
     {
       path: '/contact/:contactId',
-      component: ContactDetails
+      component: ContactDetails,
     },
     {
       path: '/edit/:contactId?',
-      component: ContactEdit
+      component: ContactEdit,
     },
   ]
 }
