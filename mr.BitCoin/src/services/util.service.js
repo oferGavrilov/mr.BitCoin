@@ -4,7 +4,15 @@ export const utilService = {
     makeId,
     getRandomInt,
     saveToStorage,
-    loadFromStorage
+    loadFromStorage,
+    getMonthName
+}
+
+function getMonthName(date) {
+    const monthNames = ["Jan`", "Feb`", "March", "April", "May", "June",
+        "July", "Aug`", "Sep`", "Oct`", "Nov`", "Dec`"
+    ]
+    return monthNames[date.getMonth()]
 }
 
 function makeId() {

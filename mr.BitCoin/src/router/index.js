@@ -3,6 +3,7 @@ import HomeView from '../pages/home.vue'
 import Statistics from '../pages/statistics.vue'
 import Contact from '@/pages/contact-index.vue'
 import ContactDetails from '@/pages/contact-details.vue'
+import ContactEdit from '@/pages/contact-edit.vue'
 
 const routerOption = {
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -23,10 +24,10 @@ const routerOption = {
       path: '/contact/:contactId',
       component: ContactDetails
     },
-    // {
-    //   path: '/contact/:_id?',
-    //   component: ContactEdit
-    // },
+    {
+      path: '/edit/:contactId?',
+      component: ContactEdit
+    },
   ]
 }
 

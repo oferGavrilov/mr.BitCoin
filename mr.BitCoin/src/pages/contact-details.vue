@@ -22,8 +22,5 @@ export default {
     const { contactId } = this.$route.params;
     this.contact = await contactService.getContactById(contactId);
   },
-};
+}
 </script>
-
-<style>
-</style>

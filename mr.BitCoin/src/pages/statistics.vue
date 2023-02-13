@@ -1,38 +1,18 @@
 <template>
-  <Bar :data="data" :options="options" />
+  <div class="stats">
+    <LastMonthStats />
+    <AvgMonth />
+  </div>
 </template>
 
-<script lang="ts">
-import {
-  Chart as ChartJS,
-  Title,
-  Tooltip,
-  Legend,
-  BarElement,
-  CategoryScale,
-  LinearScale,
-} from "chart.js";
-import { Bar } from "vue-chartjs";
-import * as chartConfig from "../chartConfig"
-
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+<script>
+import LastMonthStats from "../cmps/last-month-stats.vue"
+import AvgMonth from "../cmps/stats-avg-months.vue"
 
 export default {
-  name: "App",
   components: {
-    Bar,
+    LastMonthStats,
+    AvgMonth,
   },
-  data() {
-    return chartConfig;
-  },
-};
+}
 </script>
-<style>
-</style>
