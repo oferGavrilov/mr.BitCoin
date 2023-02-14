@@ -7,10 +7,14 @@
     <RouterLink to="/contact">
         <button>Back</button>
     </RouterLink>
+    <TransferFunds :contact="contact" />
+    <TransferList :contactId="contact._id"/>
   </article>
 </template>
 
 <script>
+import TransferFunds from '../cmps/transfer-funds.vue';
+import TransferList from '../cmps/transfer-list.vue';
 import { contactService } from "../services/contact.service";
 export default {
   data() {
@@ -22,5 +26,6 @@ export default {
     const { contactId } = this.$route.params;
     this.contact = await contactService.getContactById(contactId);
   },
+    components: { TransferFunds, TransferList },
 }
 </script>

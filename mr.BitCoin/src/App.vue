@@ -1,8 +1,19 @@
 <script>
 import AppHeader from "@/cmps/app-header.vue";
 import AppFooter from "@/cmps/app-footer.vue";
+import { userService } from './services/user.service';
 
 export default {
+  data() {
+    return{
+      user: null
+    }
+  },
+  methods:{
+    setUser() {
+      this.user = userService.getUser()
+    }
+  },
   components: {
     AppHeader,
     AppFooter,
@@ -12,11 +23,11 @@ export default {
 
 <template>
   <div>
-    <AppHeader />
+    <AppHeader :user="user"/>
     <main class="main-container">
       <RouterView v-slot="{ Component, route }">
         <transition :name="route.meta.transition || 'slide-fade'">
-          <component :is="Component" />
+          <component :is="Component" @setUser="setUser" />
         </transition>
       </RouterView>
     </main>

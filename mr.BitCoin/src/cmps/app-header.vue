@@ -6,8 +6,8 @@
           <img src="img/logo.png" alt="" />
           <h2>Mr.Bitcoin</h2>
         </div>
-        <nav>
-          <RouterLink to="/">Home</RouterLink>
+        <nav v-if="loggedInUser">
+          <RouterLink to="/home">Home</RouterLink>
           <RouterLink to="/contact">Contacts</RouterLink>
           <RouterLink to="/statistics">Statistics</RouterLink>
         </nav>
@@ -17,7 +17,19 @@
 </template>
 
 <script>
-export default {};
+import { userService } from "../services/user.service";
+export default {
+  props: ["user"],
+  data() {
+    return {
+      loggedInUser:this.user
+    }
+  },
+  created() {
+    const user = userService.getUser();
+    if(user) this.loggedInUser = user
+  },
+};
 </script>
 
 <style>

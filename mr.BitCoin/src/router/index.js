@@ -4,12 +4,17 @@ import Statistics from '../pages/statistics.vue'
 import Contact from '@/pages/contact-index.vue'
 import ContactDetails from '@/pages/contact-details.vue'
 import ContactEdit from '@/pages/contact-edit.vue'
+import Signup from '@/pages/signup.vue'
 
 const routerOption = {
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
+      path:'/',
+      component: Signup
+    },
+    {
+      path: '/home',
       component: HomeView,
     },
     {
