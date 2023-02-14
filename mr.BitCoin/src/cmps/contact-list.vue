@@ -1,5 +1,5 @@
 <template>
-  <ul >
+  <ul>
     <TransitionGroup name="list" tag="ul" class="contact-list">
       <li class="contact-preview" v-for="contact in contacts" :key="contact._id">
         <v-icon class="remove-btn" height="40px" name="io-close" @click.stop="onRemoveContact(contact._id)" />
@@ -11,7 +11,6 @@
     </TransitionGroup>
   </ul>
 </template>
-
 <script>
 import ContactPreview from "./contact-preview.vue";
 export default {
@@ -32,9 +31,5 @@ export default {
         this.$router.push(`/contact/${contactId}`)
     }
   }
-};
+}
 </script>
-
-<style>
-
-</style>
