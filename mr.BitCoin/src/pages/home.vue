@@ -5,10 +5,11 @@
       <div class="balance">
         <h4>Balance: ${{user.balance}}</h4>
         <h4>Rate: {{rate}}</h4>
-        <div class="rate flex align-center">
-        <h4>Current profit: {{(1 / rate * user.balance).toFixed(3)}}$</h4>
+        <!-- <div class="rate flex align-center">
+        <h4>Current profit
+        : {{(1 / rate * user.balance).toFixed(3)}}$</h4>
         <v-icon name="io-triangle-sharp"></v-icon><span>{{(1/rate * 100).toFixed(3)}}%</span>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="crypto-wallet">

@@ -15,7 +15,6 @@ const routerOption = {
     {
       path: '/statistics',
       component: Statistics,
-
     },
     {
       path: '/contact',
