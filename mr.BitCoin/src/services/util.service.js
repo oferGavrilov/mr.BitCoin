@@ -5,7 +5,8 @@ export const utilService = {
     getRandomInt,
     saveToStorage,
     loadFromStorage,
-    getMonthName
+    getMonthName,
+    calculateTime
 }
 
 function getMonthName(date) {
@@ -22,14 +23,34 @@ function makeId() {
     return `${pt3}-${pt1}-${pt2}`.toUpperCase()
 }
 
+function calculateTime(time) {
+    const currentTime = new Date().getTime()
+    const timeDiff = Math.floor((currentTime - time) / 60000)
+    if(timeDiff >= 60 * 24 * 7) {
+        const week = Math.floor(timeDiff / (60 * 24 * 7))
+        return `${week}w`
+    } else if(timeDiff >= 60 * 24) {
+        const day = Math.floor(timeDiff / (60 * 24))
+        return `${day}d`
+    } else if (timeDiff >= 60) {
+      const hours = Math.floor(timeDiff / 60)
+      return `${hours}h`
+    } else if(timeDiff >= 2) {
+        const minutes = timeDiff % 60
+        return `${minutes}m`
+    } else return 'now' 
+}
+
 function getRandomInt(num1, num2) {
     var max = num1 >= num2 ? num1 + 1 : num2 + 1
     var min = num1 <= num2 ? num1 : num2
     return Math.floor(Math.random() * (max - min)) + min
 }
+
 function saveToStorage(key, value) {
     localStorage.setItem(key, JSON.stringify(value) || null)
 }
+
 function loadFromStorage(key) {
     let data = localStorage.getItem(key)
     return data ? JSON.parse(data) : undefined
