@@ -3,7 +3,7 @@
     <div class="main-container">
       <div class="header-content">
         <div class="logo flex">
-          <img src="img/logo.png" alt="" />
+          <img src="/img/logo.png" alt="" />
           <h2>Mr.Bitcoin</h2>
         </div>
         <nav v-if="loggedInUser">
