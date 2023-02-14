@@ -6,7 +6,7 @@
           <img src="/img/logo.png" alt="" />
           <h2>Mr.Bitcoin</h2>
         </div>
-        <nav v-if="loggedInUser">
+        <nav v-if="loggedInUser || user">
           <RouterLink to="/home">Home</RouterLink>
           <RouterLink to="/contact">Contacts</RouterLink>
           <RouterLink to="/statistics">Statistics</RouterLink>
@@ -22,7 +22,7 @@ export default {
   props: ["user"],
   data() {
     return {
-      loggedInUser:this.user
+      loggedInUser: this.user
     }
   },
   created() {
