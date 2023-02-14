@@ -1,11 +1,9 @@
 <template>
-  <section class="transfer-funds">
-    <form @submit.prevent="onSaveTransfer">
+    <form @submit.prevent="onSaveTransfer" class="transfer-funds">
       <label for="amount">Amount to send</label>
       <input type="number" id="amount" v-model="transfer.amount" />
       <button>Send</button>
     </form>
-  </section>
 </template>
 
 <script>
@@ -27,9 +25,12 @@ export default {
   methods: {
     async onSaveTransfer() {
       try {
-        userService.transferFunds(this.transfer);
+        if(this.transfer.amount === 0) return
+        await userService.transferFunds(this.transfer)
+        this.$emit('loadTransfers')
+        this.transfer.amount = 0 
       } catch (err) {
-        console.log(err);
+        console.log(err)
       }
     },
   },

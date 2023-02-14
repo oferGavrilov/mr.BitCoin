@@ -1,0 +1,16 @@
+.transfer-list {
+    background-color: #adb5bd;
+    padding: 15px;
+    border-radius: 8px;
+    ul{
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-height: 380px;
+        overflow-y: auto;
+    }
+    h2{
+        text-align: center;
+    }
+}

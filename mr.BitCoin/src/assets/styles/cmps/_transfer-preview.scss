@@ -1,0 +1,7 @@
+.transfer-preview{
+    @include center-flex();
+    gap: 40px;
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 12px;
+}

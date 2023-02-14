@@ -18,7 +18,7 @@ export const userService = {
 async function transferFunds(transfer) {
     const user = getUser()
     user.balance -= transfer.amount
-    user.transactions.push(transfer)
+    user.transactions.unshift(transfer)
     try {
         await _save(user)
         saveLocalUser(user)

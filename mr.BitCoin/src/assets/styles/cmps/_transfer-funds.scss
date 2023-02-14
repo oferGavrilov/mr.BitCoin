@@ -1,0 +1,13 @@
+.transfer-funds{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    input {
+        width: 50px;
+        padding-left: 10px;
+        border-radius: 6px;
+    }
+    button{
+        width: 100px;
+    }
+}
