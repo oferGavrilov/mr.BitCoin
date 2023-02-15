@@ -10,8 +10,8 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
+  },
   publicPath: process.env.NODE_ENV === "production" ? "/mr.BitCoin/" : "/",
-  }
 })
 // module.exports = {
 //   publicPath: process.env.NODE_ENV === "production" ? "/mr.BitCoin/" : "/",
